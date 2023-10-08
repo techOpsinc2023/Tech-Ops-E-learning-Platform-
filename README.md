@@ -104,13 +104,13 @@ Continuous feedback and improvement will be crucial to its success.
 1. Fork the repository Tech-Ops-E-learning-Platform-
 2. Clone the forked repository into your local environment
 3. Check that the upstream is set to the Tech-Ops-E-learning-Platform- main branch. If not set:
-    * If using https:
+    * If using https:  
         git remote add upstream https://github.com/techOpsinc2023/Tech-Ops-E-learning-Platform-.git
-    * If using ssh:
+    * If using ssh:  
         git remote add upstream git@github.com:techOpsinc2023/Tech-Ops-E-learning-Platform-.git
-4. Fetch changes from the main repository
+4. Fetch changes from the main repository  
     git fetch upstream
-5. Create a new branch from the main branch, to work on
+5. Create a new branch from the main branch, to work on  
     git checkout -b your-feature-branch main
 6. Make and commit your changes. Provide a descriptive message about your changes.
 7. Push changes to your forked repository
