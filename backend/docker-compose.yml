@@ -1,0 +1,79 @@
+version: '3'
+services:
+  user-auth:
+    build:
+      context: ./backend/user-auth
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/user-auth:/app
+    networks:
+      - app-network
+    # Add other service-specific configurations here
+
+  real-time-comm:
+    build:
+      context: ./backend/real-time-comm
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend/real-time-comm:/app
+    networks:
+      - app-network
+    # Add other service-specific configurations here
+
+  course-management:
+    build:
+      context: ./backend/course-management
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/course-management:/app
+    networks:
+      - app-network
+    # Add other service-specific configurations here
+
+  progress-tracking:
+    build:
+      context: ./backend/progress-tracking
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend/progress-tracking:/app
+    networks:
+      - app-network
+    # Add other service-specific configurations here
+
+  api-gateway:
+    build:
+      context: ./backend/api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./backend/api-gateway:/app
+    networks:
+      - app-network
+    # Add other service-specific configurations here
+
+  nginx-cdn:
+    build:
+      context: ./backend/nginx-cdn
+      dockerfile: Dockerfile
+    ports:
+      - "443:443"
+    volumes:
+      - ./backend/nginx-cdn:/app
+    networks:
+      - app-network
+    # Add other service-specific configurations here
+
+# Add configurations for other services here
+
+networks:
+  app-network:
+    driver: bridge
