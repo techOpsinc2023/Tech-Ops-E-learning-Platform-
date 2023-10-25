@@ -11,7 +11,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY static /app/static
 
 # Expose port 80 for incoming traffic
-EXPOSE 80
+EXPOSE 443
 
 # Start nginx when the container launches
 CMD ["nginx", "-g", "daemon off;"]
