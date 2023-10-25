@@ -22,6 +22,8 @@ services:
       - real-time-comm-data:/app/data
     networks:
       - app-network
+    depends_on:
+      - user-auth
     # Add other service-specific configurations here
 
   course-management:
@@ -34,6 +36,8 @@ services:
       - course-management-data:/app/data
     networks:
       - app-network
+    depends_on:
+      - real-time-comm
     # Add other service-specific configurations here
 
   progress-tracking:
@@ -46,6 +50,9 @@ services:
       - progress-tracking-data:/app/data
     networks:
       - app-network
+    depends_on:
+      - real-time-comm
+      
     # Add other service-specific configurations here
 
   api-gateway:
@@ -58,6 +65,8 @@ services:
       - api-gateway-config:/etc/nginx/conf.d
     networks:
       - app-network
+    depends_on:
+      - progress-tracking
     # Add other service-specific configurations here
 
   nginx-cdn:
@@ -70,6 +79,8 @@ services:
       - nginx-cdn-config:/app/config
     networks:
       - app-network
+    depends_on:
+      - api-gateway
     # Add other service-specific configurations here
 
 # Add configurations for other services here
