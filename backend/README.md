@@ -4,40 +4,49 @@ Welcome to the backend directory of the TechOps EduLink project. This directory 
 
 ## Microservices
 
-1. **User Authentication Microservice** (Node.js/Express.js):
-   - Provides user registration, login, and authentication features.
-   - Source code: `./user-auth/src/`
-   - Dockerfile: `./user-auth/Dockerfile`
+### User Authentication Microservice (Node.js/Express.js):
+- Provides user registration, login, and authentication features.
+- **Source Code:** `./backend/user-auth/src/`
+- **Tests:** `./backend/user-auth/tests/`
+- **Dockerfile:** `./backend/user-auth/Dockerfile`
+- **[User Authentication README](./backend/user-auth/README.md)**
 
-2. **Content Delivery Microservice** (Nginx):
-   - Manages content delivery, caching, and content optimization using Nginx.
-   - Configuration file: `./content-delivery/nginx.conf`
-   - Dockerfile: `./content-delivery/Dockerfile`
+### Content Delivery Microservice (Nginx):
+- Manages content delivery, caching, and content optimization using Nginx.
+- **Configuration:** `./backend/content-delivery/nginx.conf`
+- **Dockerfile:** `./backend/content-delivery/Dockerfile`
+- **[Content Delivery README](./backend/content-delivery/README.md)**
 
-3. **Real-Time Communication Microservice** (Node.js/Express.js):
-   - Enables real-time chat and collaboration using WebSockets.
-   - Source code: `./real-time-comm/src/`
-   - Dockerfile: `./real-time-comm/Dockerfile`
+### Real-Time Communication Microservice (Node.js/Express.js):
+- Enables real-time chat and collaboration using WebSockets.
+- **Source Code:** `./backend/real-time-comm/src/`
+- **Tests:** `./backend/real-time-comm/tests/`
+- **Dockerfile:** `./backend/real-time-comm/Dockerfile`
+- **[Real-Time Communication README](./backend/real-time-comm/README.md)**
 
-4. **Course Management Microservice** (Django):
-   - Handles course creation and management for instructors.
-   - Source code: `./course-management/`
-   - Dockerfile: `./course-management/Dockerfile`
+### Course Management Microservice (Django):
+- Handles course creation and management for instructors.
+- **Source Code:** `./backend/course-management/`
+- **Dockerfile:** `./backend/course-management/Dockerfile`
+- **[Course Management README](./backend/course-management/README.md)**
 
-5. **Progress Tracking Microservice** (Django):
-   - Tracks and analyzes individual and overall student progress.
-   - Source code: `./progress-tracking/`
-   - Dockerfile: `./progress-tracking/Dockerfile`
+### Progress Tracking Microservice (Django):
+- Tracks and analyzes individual and overall student progress.
+- **Source Code:** `./backend/progress-tracking/`
+- **Dockerfile:** `./backend/progress-tracking/Dockerfile`
+- **[Progress Tracking README](./backend/progress-tracking/README.md)**
 
-6. **API Gateway Configuration**:
-   - Configures Nginx as the API Gateway for routing and load balancing.
-   - Configuration file: `./api-gateway/nginx.conf`
-   - Dockerfile: `./api-gateway/Dockerfile`
+### API Gateway Configuration:
+- Configures Nginx as the API Gateway for routing and load balancing.
+- **Configuration:** `./backend/api-gateway/nginx.conf`
+- **Dockerfile:** `./backend/api-gateway/Dockerfile`
+- **[API Gateway README](./backend/api-gateway/README.md)**
 
-7. **CDN Nginx Configuration**:
-   - Sets up Nginx as the Content Delivery Network (CDN) for optimized content delivery.
-   - Configuration file: `./nginx-cdn/cdn.conf`
-   - Dockerfile: `./nginx-cdn/Dockerfile`
+### CDN Nginx Configuration:
+- Sets up Nginx as the Content Delivery Network (CDN) for optimized content delivery.
+- **Configuration:** `./backend/nginx-cdn/cdn.conf`
+- **Dockerfile:** `./backend/nginx-cdn/Dockerfile`
+- **[CDN Nginx README](./backend/nginx-cdn/README.md)**
 
 ## Getting Started
 
@@ -45,7 +54,7 @@ To get started with the backend microservices, follow these steps:
 
 1. Clone this repository to your local development environment.
 
-2. Navigate to the desired microservice directory using the terminal, e.g., `cd user-auth`.
+2. Navigate to the desired microservice directory using the terminal, e.g., `cd backend/user-auth`.
 
 3. Review the microservice's README and documentation for specific setup and usage instructions.
 
@@ -55,7 +64,7 @@ To get started with the backend microservices, follow these steps:
 
 ## Contributing
 
-We welcome contributions from the open-source community. If you'd like to contribute to this project, please follow our [Contributing Guidelines](CONTRIBUTING.md).
+We welcome contributions from the open-source community. If you'd like to contribute to this project, please follow our [Contributing Guidelines](../CONTRIBUTING.md).
 
 ## License
 
