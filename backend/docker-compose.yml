@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./backend/user-auth:/app/data
+      - user-auth-data:/app/data
     networks:
       - app-network
     # Add other service-specific configurations here
@@ -19,7 +19,7 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - ./real-time-comm:/app/data
+      - real-time-comm-data:/app/data
     networks:
       - app-network
     # Add other service-specific configurations here
@@ -31,7 +31,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./backend/course-management:/app/data
+      - course-management-data:/app/data
     networks:
       - app-network
     # Add other service-specific configurations here
@@ -43,7 +43,7 @@ services:
     ports:
       - "8001:8001"
     volumes:
-      - ./backend/progress-tracking:/app/data
+      - progress-tracking-data:/app/data
     networks:
       - app-network
     # Add other service-specific configurations here
@@ -55,7 +55,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./backend/api-gateway:/app/config
+      - api-gateway-config:/etc/nginx/conf.d
     networks:
       - app-network
     # Add other service-specific configurations here
@@ -67,7 +67,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - ./backend/nginx-cdn:/app/config
+      - nginx-cdn-config:/app/config
     networks:
       - app-network
     # Add other service-specific configurations here
