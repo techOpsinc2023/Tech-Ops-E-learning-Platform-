@@ -1,0 +1,99 @@
+version: '3'
+services:
+  user-auth:
+    build:
+      context: ./user_auth
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - user-auth-data:/app/data
+    networks:
+      - app-network
+    # Add other service-specific configurations here
+
+  real-time-comm:
+    build:
+      context: ./real_time_comm
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - real-time-comm-data:/app/data
+    networks:
+      - app-network
+    depends_on:
+      - user-auth
+    # Add other service-specific configurations here
+
+  course-management:
+    build:
+      context: ./course-management
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - course-management-data:/app/data
+    networks:
+      - app-network
+    depends_on:
+      - real-time-comm
+    # Add other service-specific configurations here
+
+  progress-tracking:
+    build:
+      context: ./progress-tracking
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - progress-tracking-data:/app/data
+    networks:
+      - app-network
+    depends_on:
+      - real-time-comm
+      
+    # Add other service-specific configurations here
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - api-gateway-config:/etc/nginx/conf.d
+    networks:
+      - app-network
+    depends_on:
+      - progress-tracking
+    # Add other service-specific configurations here
+
+  nginx-cdn:
+    build:
+      context: ./nginx-cdn
+      dockerfile: Dockerfile
+    ports:
+      - "443:443"
+    volumes:
+      - nginx-cdn-config:/app/config
+    networks:
+      - app-network
+    depends_on:
+      - api-gateway
+    # Add other service-specific configurations here
+
+# Add configurations for other services here
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  user-auth-data:
+  real-time-comm-data:
+  course-management-data:
+  progress-tracking-data:
+  api-gateway-config:
+  nginx-cdn-config:
+
